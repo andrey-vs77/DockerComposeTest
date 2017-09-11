@@ -1,0 +1,13 @@
+version: "2"
+services:
+    mserver:
+        image: mysqlserver
+        ports:
+            - "3306:3306"
+        environment: 
+            MYSQL_ROOT_PASSWORD: "password"
+    jclient:
+        image: maven-mysql
+        depends_on: 
+            - mserver
+     
